@@ -21,12 +21,12 @@
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
-        dt_cl: dot_colon {
-           compatible = "zmk,behavior-mod-morph";
-           #binding-cells = <0>;
-           bindings = <&kp ESC>, <&kp GRAVE>;
-           mods = <(MOD_LSFT)>;
-       };
+        #dt_cl: dot_colon {
+        #   compatible = "zmk,behavior-mod-morph";
+        #   #binding-cells = <0>;
+        #   bindings = <&kp ESC>, <&kp GRAVE>;
+        #   mods = <(MOD_LSFT)>;
+       #};
     };
 
     keymap {
@@ -34,6 +34,7 @@
         default {
             //  thumb keys (press/hold)
             //  CTRL  SHIFT     SPACE/NUMBERS   ESCAPE/SYMBOLS
+            /----------------------------------
             bindings = <
                 &kp Q    &kp W          &kp E         &kp R            &kp T        &kp Y        &kp U         &kp I         &kp O      &kp P
                 &kp A    &ht LALT S     &ht LGUI D    &kp F            &kp G        &kp H        &ht RGUI J    &ht RALT K    &kp L      &trans
@@ -44,11 +45,12 @@
 
         numbers {
             //             = 7 8 9 BACKSPACE
-            //             + 4 5 6 ENTER
+            //  TAB        + 4 5 6 ENTER
             //             0 1 2 3
+            /----------------------------------
             bindings = <
-                &trans     &trans      &trans      &trans     &trans           &trans     &kp 7      &kp 8      &kp 9       &kp BSPC
-                &trans     &trans      &trans      &trans     &trans             &trans    &kp 4      &kp 5      &kp 6      &kp ENTER
+                &trans     &trans      &trans      &trans     &trans           &kp EQUAL   &kp 7      &kp 8      &kp 9       &kp BSPC
+                &kp TAB     &trans      &trans      &trans     &trans           &kp PLUS    &kp 4      &kp 5      &kp 6      &kp ENTER
                 &trans     &trans      &trans      &trans     &trans           &kp 0       &kp 1     &kp 2     &kp 3     &trans
                                              &kp LCTRL     &kp LSHFT                      &trans     &trans
             >;
@@ -57,6 +59,7 @@
             //       & # ~ *    ' [ ]   BACKSPACE
             //   TAB ^ @ % $    " ( ) | ENTER
             //       ? ! \ /      { } < >
+            /----------------------------------
             bindings = <
                 &trans     &kp AMPS      &kp HASH     &kp TILDE     &kp STAR          &kp SQT   &kp LBKT      &kp RBKT      &trans       &kp BSPC
                 &kp TAB    &kp CARET     &kp AT        &kp PRCNT     &kp DLLR          &kp DQT   &kp LPAR      &kp RPAR      &kp PIPE      &kp ENTER
