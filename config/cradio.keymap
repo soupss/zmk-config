@@ -21,12 +21,24 @@
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
-        #dt_cl: dot_colon {
-        #   compatible = "zmk,behavior-mod-morph";
-        #   #binding-cells = <0>;
-        #   bindings = <&kp ESC>, <&kp GRAVE>;
-        #   mods = <(MOD_LSFT)>;
-       #};
+        dc: dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT)>;
+        };
+        cs: comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT)>;
+        };
+        du: dash_underscore {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp UNDER>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     keymap {
@@ -42,7 +54,7 @@
             bindings = <
                 &kp Q    &kp W          &kp E         &kp R            &kp T        &kp Y        &kp U         &kp I         &kp O      &kp P
                 &kp A    &ht LALT S     &ht LGUI D    &kp F            &kp G        &kp H        &ht RGUI J    &ht RALT K    &kp L      &trans
-                &kp Z    &kp X          &kp C         &kp V            &kp B        &kp N        &kp M         &kp COMMA     &kp DOT    &kp FSLH
+                &kp Z    &kp X          &kp C         &kp V            &kp B        &kp N        &kp M         &cs     &dc    &du
                                      &kp LCTRL     &kp LSHFT              &lt NUM SPACE    &lt SYM ESC
             >;
         };
