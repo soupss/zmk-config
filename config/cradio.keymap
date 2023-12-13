@@ -21,19 +21,25 @@
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
+        dt_cl: dot_colon {
+           compatible = "zmk,behavior-mod-morph";
+           #binding-cells = <0>;
+           bindings = <&kp ESC>, <&kp GRAVE>;
+           mods = <(MOD_LSFT)>;
+       };
     };
 
     keymap {
         compatible = "zmk,keymap";
         default {
-            // thumb keys (press/hold)
+            //  thumb keys (press/hold)
             //  CTRL  SHIFT     SPACE/NUMBERS   ESCAPE/SYMBOLS
             bindings = <
                 &kp Q    &kp W          &kp E         &kp R            &kp T        &kp Y        &kp U         &kp I         &kp O      &kp P
                 &kp A    &ht LALT S     &ht LGUI D    &kp F            &kp G        &kp H        &ht RGUI J    &ht RALT K    &kp L      &trans
                 &kp Z    &kp X          &kp C         &kp V            &kp B        &kp N        &kp M         &kp COMMA     &kp DOT    &kp FSLH
                                      &kp LCTRL     &kp LSHFT              &lt NUM SPACE    &lt SYM ESC
-                >;
+            >;
         };
 
         numbers {
@@ -45,7 +51,7 @@
                 &trans     &trans      &trans      &trans     &trans             &trans    &kp 4      &kp 5      &kp 6      &kp ENTER
                 &trans     &trans      &trans      &trans     &trans           &kp 0       &kp 1     &kp 2     &kp 3     &trans
                                              &kp LCTRL     &kp LSHFT                      &trans     &trans
-                >;
+            >;
         };
         symbols {
             //       & # ~ *    ' [ ]   BACKSPACE
@@ -54,9 +60,9 @@
             bindings = <
                 &trans     &kp AMPS      &kp HASH     &kp TILDE     &kp STAR          &kp SQT   &kp LBKT      &kp RBKT      &trans       &kp BSPC
                 &kp TAB    &kp CARET     &kp AT        &kp PRCNT     &kp DLLR          &kp DQT   &kp LPAR      &kp RPAR      &kp PIPE      &kp ENTER
-                &trans     &kp QMARK     &kp EXCL     &kp BLSH     &kp FLSH          &trans     &kp LBRC     &kp RBRC     &kp LT     &kp GT
+                &trans     &kp QMARK     &kp EXCL     &kp BSLH     &kp FSLH          &trans     &kp LBRC     &kp RBRC     &kp LT     &kp GT
                                                  &kp LCTRL     &kp LSHFT              k&trans     &trans
-                >;
+            >;
         };
     };
 };
