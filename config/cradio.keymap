@@ -21,6 +21,9 @@
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
+        &lt {
+            tapping-term-ms = <200>;
+        };
         dc: dot_colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
