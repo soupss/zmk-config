@@ -44,12 +44,19 @@
     keymap {
         compatible = "zmk,keymap";
 
+        // homerow mods
+        //----------------------------------
+        // _ ALT GUI _ _     _ _ GUI ALT _
+
+        // thumb keys
+        //----------------------------------
+        // CTRL SHIFT    SPACE/NUMBERS ESCAPE/SYMBOLS
+        //               (press/hold)
+
         default {
-            //  q  w  e  r  t    y  u  i    o    p
-            //  a  s  d  f  g    h  j  k    l
-            //  z  x  c  v  b    n  m  , ;  . :  - _
-            //    CTRL  SHIFT    SPACE/NUMBERS  ESCAPE/SYMBOLS
-            //                   (press/hold)
+            //  q  w  e  r  t    y  u  i   o   p
+            //  a  s  d  f  g    h  j  k   l
+            //  z  x  c  v  b    n  m  ,;  .:  -_
             //----------------------------------
             bindings = <
                 &kp Q    &kp W          &kp E         &kp R            &kp T        &kp Y        &kp U         &kp I         &kp O      &kp P
@@ -58,28 +65,27 @@
                                      &kp LCTRL     &kp LSHFT              &lt NUM SPACE    &lt SYM ESC
             >;
         };
-
         numbers {
-            //             = 7 8 9 BACKSPACE
-            //  TAB        + 4 5 6 ENTER
+            //               7 8 9 BACKSPACE
+            //  TAB          4 5 6 ENTER
             //             0 1 2 3
             //----------------------------------
             bindings = <
-                &trans     &trans      &trans      &trans     &trans           &kp EQUAL   &kp 7      &kp 8      &kp 9       &kp BSPC
-                &kp TAB     &trans      &trans      &trans     &trans           &kp PLUS    &kp 4      &kp 5      &kp 6      &kp ENTER
-                &trans     &trans      &trans      &trans     &trans           &kp 0       &kp 1     &kp 2     &kp 3     &trans
+                &trans     &trans      &trans      &trans     &trans           &trans     &kp 7      &kp 8           &kp 9         &kp BSPC
+                &kp TAB     &trans      &trans      &trans     &trans           &trans    &kp 4      &ht RGUI 5      &ht RALT 6      &kp ENTER
+                &trans     &trans      &trans      &trans     &trans           &kp 0       &kp 1     &kp 2              &kp 3     &trans
                                              &kp LCTRL     &kp LSHFT                      &trans     &trans
             >;
         };
         symbols {
-            //       & # ~ *    ' [ ]   BACKSPACE
-            //   TAB ^ @ % $    " ( ) | ENTER
-            //       ? ! \ /      { } < >
+            //     + & # ~ *    " [ ]   BACKSPACE
+            //   TAB ^ @ % $    ' ( ) | ENTER
+            //     = ? ! \ /    ` { } < >
             //----------------------------------
             bindings = <
-                &trans     &kp AMPS      &kp HASH     &kp TILDE     &kp STAR          &kp SQT   &kp LBKT      &kp RBKT      &trans       &kp BSPC
-                &kp TAB    &kp CARET     &kp AT        &kp PRCNT     &kp DLLR          &kp DQT   &kp LPAR      &kp RPAR      &kp PIPE      &kp ENTER
-                &trans     &kp QMARK     &kp EXCL     &kp BSLH     &kp FSLH          &trans     &kp LBRC     &kp RBRC     &kp LT     &kp GT
+                &kp PLUS    &kp AMPS          &kp HASH       &kp TILDE    &kp STAR          &kp DQT    &kp LBKT      &kp RBKT      &trans       &kp BSPC
+                &kp TAB     &ht LALT CARET    &ht LGUI AT      &kp PRCNT    &kp DLLR          &kp SQT    &kp LPAR      &ht RGUI RPAR      &ht RALT PIPE      &kp ENTER
+                &kp EQUAL   &kp QMARK        &kp EXCL        &kp BSLH     &kp FSLH          &kp GRAVE  &kp LBRC     &kp RBRC     &kp LT     &kp GT
                                                  &kp LCTRL     &kp LSHFT              &trans     &trans
             >;
         };
