@@ -21,7 +21,7 @@
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
-        &lt {
+        lt: layer_tap {
             tapping-term-ms = <200>;
         };
         dc: dot_colon {
@@ -62,10 +62,10 @@
             //  z  x  c  v  b    n  m  ,;  .:  -_
             //----------------------------------
             bindings = <
-                &kp Q    &kp W          &kp E         &kp R            &kp T        &kp Y        &kp U         &kp I         &kp O      &kp P
-                &kp A    &ht LALT S     &ht LGUI D    &kp F            &kp G        &kp H        &ht RGUI J    &ht RALT K    &kp L      &trans
-                &kp Z    &kp X          &kp C         &kp V            &kp B        &kp N        &kp M         &cs     &dc    &du
-                                     &kp LCTRL     &kp LSHFT              &lt NUM SPACE    &lt SYM ESC
+                &kp Q    &kp W          &kp E         &kp R        &kp T        &kp Y     &kp U         &kp I         &kp O      &kp P
+                &kp A    &ht LALT S     &ht LGUI D    &kp F        &kp G        &kp H     &kp J    &ht RALT K    &ht RGUI L      &trans
+                &kp Z    &kp X          &kp C         &kp V        &kp B        &kp N     &kp M         &cs     &dc    &du
+                                                         &kp LCTRL     &kp LSHFT         &lt NUM SPACE    &lt SYM ESC
             >;
         };
         numbers {
