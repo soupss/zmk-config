@@ -31,9 +31,13 @@
 
     keymap {
         compatible = "zmk,keymap";
+
         default {
-            //  thumb keys (press/hold)
-            //  CTRL  SHIFT     SPACE/NUMBERS   ESCAPE/SYMBOLS
+            //  q  w  e  r  t    y  u  i    o    p
+            //  a  s  d  f  g    h  j  k    l
+            //  z  x  c  v  b    n  m  , ;  . :  - _
+            //    CTRL  SHIFT    SPACE/NUMBERS  ESCAPE/SYMBOLS
+            //                   (press/hold)
             //----------------------------------
             bindings = <
                 &kp Q    &kp W          &kp E         &kp R            &kp T        &kp Y        &kp U         &kp I         &kp O      &kp P
