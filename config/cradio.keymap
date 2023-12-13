@@ -80,7 +80,7 @@
                 &trans     &kp AMPS      &kp HASH     &kp TILDE     &kp STAR          &kp SQT   &kp LBKT      &kp RBKT      &trans       &kp BSPC
                 &kp TAB    &kp CARET     &kp AT        &kp PRCNT     &kp DLLR          &kp DQT   &kp LPAR      &kp RPAR      &kp PIPE      &kp ENTER
                 &trans     &kp QMARK     &kp EXCL     &kp BSLH     &kp FSLH          &trans     &kp LBRC     &kp RBRC     &kp LT     &kp GT
-                                                 &kp LCTRL     &kp LSHFT              k&trans     &trans
+                                                 &kp LCTRL     &kp LSHFT              &trans     &trans
             >;
         };
     };
