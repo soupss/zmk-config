@@ -5,30 +5,33 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-// Layers macro
 #define DEFAULT 0
 #define NUM 1
 #define SYM 2
 
+#define ___ &trans
+#define XXX &none
+
+&ht {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <150>;
+    require-prior-idle-ms = <100>;
+    bindings = <&kp>, <&kp>;
+};
+&lt {
+    tapping-term-ms = <200>;
+};
+
 /{
     behaviors {
-        ht: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
-            bindings = <&kp>, <&kp>;
-        };
-        lt: layer_tap {
-            tapping-term-ms = <200>;
-        };
         dc: dot_colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp COLON>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LCTL)>;
         };
         cs: comma_semicolon {
             compatible = "zmk,behavior-mod-morph";
@@ -63,7 +66,7 @@
             //----------------------------------
             bindings = <
                 &kp Q    &kp W          &kp E         &kp R        &kp T        &kp Y     &kp U         &kp I         &kp O      &kp P
-                &kp A    &ht LALT S     &ht LGUI D    &kp F        &kp G        &kp H     &kp J    &ht RALT K    &ht RGUI L      &trans
+                &kp A    &ht LALT S     &ht LGUI D    &kp F        &kp G        &kp H     &kp J    &ht RALT K    &ht RGUI L      ___
                 &kp Z    &kp X          &kp C         &kp V        &kp B        &kp N     &kp M         &cs     &dc    &du
                                                          &kp LCTRL     &kp LSHFT         &lt NUM SPACE    &lt SYM ESC
             >;
@@ -74,10 +77,10 @@
             //             0 1 2 3
             //----------------------------------
             bindings = <
-                &trans     &trans      &trans      &trans     &trans           &trans     &kp 7      &kp 8           &kp 9         &kp BSPC
-                &kp TAB     &trans      &trans      &trans     &trans           &trans    &kp 4      &ht RGUI 5      &ht RALT 6      &kp ENTER
-                &trans     &trans      &trans      &trans     &trans           &kp 0       &kp 1     &kp 2              &kp 3     &trans
-                                             &kp LCTRL     &kp LSHFT                      &trans     &trans
+                ___     ___      ___      ___     ___           ___     &kp 7      &kp 8           &kp 9         &kp BSPC
+                &kp TAB     ___      ___      ___     ___           ___    &kp 4      &ht RGUI 5      &ht RALT 6      &kp ENTER
+                ___     ___      ___      ___     ___           &kp 0       &kp 1     &kp 2              &kp 3     ___
+                                             &kp LCTRL     &kp LSHFT                      ___     ___
             >;
         };
         symbols {
@@ -86,10 +89,10 @@
             //     = ? ! \ /    ` { } < >
             //----------------------------------
             bindings = <
-                &kp PLUS    &kp AMPS          &kp HASH       &kp TILDE    &kp STAR          &kp DQT    &kp LBKT      &kp RBKT      &trans       &kp BSPC
+                &kp PLUS    &kp AMPS          &kp HASH       &kp TILDE    &kp STAR          &kp DQT    &kp LBKT      &kp RBKT      ___       &kp BSPC
                 &kp TAB     &ht LALT CARET    &ht LGUI AT      &kp PRCNT    &kp DLLR          &kp SQT    &kp LPAR      &ht RGUI RPAR      &ht RALT PIPE      &kp ENTER
                 &kp EQUAL   &kp QMARK        &kp EXCL        &kp BSLH     &kp FSLH          &kp GRAVE  &kp LBRC     &kp RBRC     &kp LT     &kp GT
-                                                 &kp LCTRL     &kp LSHFT              &trans     &trans
+                                                 &kp LCTRL     &kp LSHFT              ___     ___
             >;
         };
     };
