@@ -5,10 +5,10 @@
 #include <dt-bindings/zmk/keys.h>
 
 &mt {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "tap-preferred";
     tapping-term-ms = <200>;
+    compatible = "zmk,behavior-hold-tap";
+#binding-cells = <2>;
+    flavor = "tap-preferred";
     quick-tap-ms = <150>;
     require-prior-idle-ms = <100>;
     bindings = <&kp>, <&kp>;
@@ -20,29 +20,29 @@
 
 / {
     behaviors {
-        dc: dot_colon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COLON>;
+dc: dot_colon {
+        compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+        bindings = <&kp DOT>, <&kp COLON>;
 
-            mods = <(MOD_LSFT)>;
-        };
+        mods = <(MOD_LSFT)>;
+    };
 
-        cs: comma_semicolon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp SEMI>;
+cs: comma_semicolon {
+        compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+        bindings = <&kp COMMA>, <&kp SEMI>;
 
-            mods = <(MOD_LSFT)>;
-        };
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
 
-        du: dash_underscore {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp UNDER>;
+du: dash_underscore {
+        compatible = "zmk,behavior-mod-morph";
+#binding-cells = <0>;
+        bindings = <&kp MINUS>, <&kp UNDER>;
 
-            mods = <(MOD_LSFT)>;
-        };
+        mods = <(MOD_LSFT)>;
+    };
     };
 
     keymap {
@@ -63,11 +63,11 @@
             //----------------------------------
 
             bindings = <
-&kp Q       &kp W        &kp E        &kp R       &kp T         &kp Y       &kp U        &kp I         &kp O        &kp P
-&mt A LALT  &mt LCTRL S  &mt LSHFT D  &mt LGUI F  &kp G         &kp H       &mt RGUI J   &mt RSHIFT K  &mt RCTRL L  &kp RALT
-&kp Z       &kp X        &kp C        &kp V       &kp B         &kp N       &kp M        &cs           &dc          &du
-                                      &kp SPACE   &kp ESCAPE    &lt 1 BSPC  &lt 2 ENTER
-            >;
+                &kp Q       &kp W        &kp E        &kp R       &kp T         &kp Y       &kp U        &kp I         &kp O        &kp P
+                &mt LALT A  &mt LCTRL S  &mt LSHFT D  &mt LGUI F  &kp G         &kp H       &mt RGUI J   &mt RSHIFT K  &mt RCTRL L  &kp RALT
+                &kp Z       &kp X        &kp C        &kp V       &kp B         &kp N       &kp M        &cs           &dc          &du
+                &kp SPACE   &kp ESCAPE    &lt 1 BSPC  &lt 2 ENTER
+                >;
         };
 
         numbers {
@@ -77,11 +77,11 @@
             //----------------------------------
 
             bindings = <
-&trans        &trans     &trans     &trans     &trans     &trans    &kp N7       &kp N8         &kp N9        &trans
-&mt LALT ESC  &kp LCTRL  &kp LSHFT  &kp LGUI   &trans     &trans    &mt RGUI N4  &mt RSHIFT N5  &mt RCTRL N6  &kp RALT
-&trans        &trans     &trans     &trans     &trans     &kp N0    &kp N1       &kp N2         &kp N3        &trans
-                                    &kp SPACE  &kp ESC    &kp BSPC  &kp ENTER
-            >;
+                &trans        &trans     &trans     &trans     &trans     &trans  &kp N7       &kp N8         &kp N9        &trans
+                &mt LALT ESC  &kp LCTRL  &kp LSHFT  &kp LGUI   &trans     &trans  &mt RGUI N4  &mt RSHIFT N5  &mt RCTRL N6  &kp RALT
+                &trans        &trans     &trans     &trans     &trans     &kp N0  &kp N1       &kp N2         &kp N3        &trans
+                &kp SPACE  &kp ESC    &trans  &trans
+                >;
         };
 
         symbols {
@@ -91,11 +91,11 @@
             //----------------------------------
 
             bindings = <
-&kp AMPERSAND  &kp HASH         &kp AT           &kp TILDE       &kp STAR    &kp DQT    &kp LBKT                   &kp RBKT        &trans        &trans
-&mt LALT ESC   &mt LCTRL CARET  &mt LSHFT EQUAL  &mt LGUI PRCNT  &kp DLLR    &kp SQT    &mt RGUI LEFT_PARENTHESIS  &mt RSHFT RPAR  &mt RCTRL LT  &mt RALT GREATER_THAN
-&kp EXCL       &kp QMARK        &kp PIPE         &kp BSLH        &kp FSLH    &kp GRAVE  &kp LBRC                   &kp RBRC        &trans        &trans
-                                                 &kp SPACE       &kp ESC     &kp BSPC   &kp ENTER
-            >;
+                &trans        &kp HASH         &kp AT           &kp TILDE       &kp STAR    &kp DQT    &kp LBKT                   &kp RBKT        &kp AMPS      &trans
+                &mt LALT ESC  &mt LCTRL CARET  &mt LSHFT EQUAL  &mt LGUI PRCNT  &kp DLLR    &kp SQT    &mt RGUI LEFT_PARENTHESIS  &mt RSHFT RPAR  &mt RCTRL LT  &mt RALT GREATER_THAN
+                &kp EXCL      &kp QMARK        &kp PIPE         &kp BSLH        &kp FSLH    &kp GRAVE  &kp LBRC                   &kp RBRC        &kp PLUS      &trans
+                &kp SPACE       &kp ESC     &trans     &trans
+                >;
         };
     };
 };
