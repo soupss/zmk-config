@@ -10,7 +10,7 @@
 
 / {
     behaviors {
-    dot_colon: dot_colon {
+dot_colon: dot_colon {
                compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
                bindings = <&kp DOT>, <&kp COLON>;
@@ -44,7 +44,6 @@ mtr: mod_tap_right {
          quick-tap-ms = <150>;
          require-prior-idle-ms = <100>;
          flavor = "balanced";
-         retro-tap;
          hold-trigger-key-positions = <4 14 24 31 30 23 13 32 33 3 2 12 22 21 11 10 0 1 20 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;
          hold-trigger-on-release;
      };
@@ -59,10 +58,16 @@ mtl: mod_tap_left {
          quick-tap-ms = <150>;
          require-prior-idle-ms = <100>;
          flavor = "balanced";
-         retro-tap;
          hold-trigger-on-release;
          hold-trigger-key-positions = <17 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33 31 30>;
      };
+
+bs_td: backspace_tapdance {
+           compatible = "zmk,behavior-tap-dance";
+#binding-cells = <0>;
+           tapping-term-ms = <200>;
+           bindings = <&lt 1 BSPC>, <&kp BSPC>;
+       };
     };
 
     combos {
@@ -107,10 +112,10 @@ mtl: mod_tap_left {
             //----------------------------------
 
             bindings = <
-                &kp Q        &kp W         &kp E         &kp R        &kp T         &kp Y       &kp U        &kp I         &kp O         &kp P
-                &mtl LALT A  &mtl LSHFT S  &mtl LCTRL D  &mtl LGUI F  &kp G         &kp H       &mtr RGUI J  &mtr RCTRL K  &mtr RSHFT L  &kp RALT
-                &kp Z        &kp X         &kp C         &kp V        &kp B         &kp N       &kp M        &cma_scolon   &dot_colon    &dash_undrsc
-                &kp SPACE    &kp ESCAPE    &lt 1 BSPC  &lt 2 ENTER
+                &kp Q        &kp W         &kp E         &kp R        &kp T         &kp Y   &kp U        &kp I         &kp O         &kp P
+                &mtl LALT A  &mtl LSHFT S  &mtl LCTRL D  &mtl LGUI F  &kp G         &kp H   &mtr RGUI J  &mtr RCTRL K  &mtr RSHFT L  &kp RALT
+                &kp Z        &kp X         &kp C         &kp V        &kp B         &kp N   &kp M        &cma_scolon   &dot_colon    &dash_undrsc
+                &kp SPACE    &kp ESCAPE    &bs_td  &lt 2 ENTER
                 >;
         };
 
@@ -137,7 +142,7 @@ mtl: mod_tap_left {
             bindings = <
                 &kp AMPERSAND  &kp AT_SIGN       &kp HASH          &kp STAR          &kp TILDE        &kp GRAVE          &kp LBKT                    &kp RBKT         &kp PIPE       &trans
                 &mtl LALT ESC  &mtl LSHFT EQUAL  &mtl LCTRL CARET  &mtl LGUI DOLLAR  &kp PRCNT        &kp DOUBLE_QUOTES  &mtr RGUI LEFT_PARENTHESIS  &mtr RCTRL RPAR  &mtr RSHFT LT  &kp GT
-                &trans         &kp EXCL          &kp QMARK         &kp SLASH         &kp BACKSLASH    &kp SQT            &kp LBRC                    &kp RBRC         &kp PLUS         &trans
+                &trans         &kp EXCL          &kp QMARK         &kp SLASH         &kp BACKSLASH    &kp SQT            &kp LBRC                    &kp RBRC         &kp PLUS       &trans
                 &kp SPACE         &kp ESC          &trans             &trans
                 >;
         };
