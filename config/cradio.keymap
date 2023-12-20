@@ -65,13 +65,6 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <17 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33 31 30>;
         };
-
-        bs_td: backspace_tapdance {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&lt 1 bspc>, <&kp bspc>;
-        };
     };
 
     combos {
@@ -123,16 +116,11 @@
 &kp Q        &kp W         &kp E         &kp R        &kp T         &kp Y   &kp U        &kp I         &kp O         &kp P
 &mtl LALT A  &mtl LSHFT S  &mtl LCTRL D  &mtl LGUI F  &kp G         &kp H   &mtr RGUI J  &mtr RCTRL K  &mtr RSHFT L  &kp RALT
 &kp Z        &kp X         &kp C         &kp V        &kp B         &kp N   &kp M        &cma_scolon   &dot_colon    &dash_undrsc
-                                         &kp SPACE    &kp ESCAPE    &bs_td  &lt 2 ENTER
+                                         &kp SPACE    &kp ESCAPE    &kp BSPC  &lt 2 ENTER
             >;
         };
 
         numbers {
-            //               7 8 9 BACKSPACE
-            //  TAB          4 5 6 ENTER
-            //             0 1 2 3
-            //----------------------------------
-
             bindings = <
 &trans         &trans     &trans     &trans     &trans     &trans  &kp N7        &kp N8         &kp N9         &trans
 &mtl LALT ESC  &kp LSHFT  &kp LCTRL  &kp LGUI   &trans     &trans  &mtr RGUI N4  &mtr RCTRL N5  &mtr RSHFT N6  &kp RALT
@@ -142,11 +130,6 @@
         };
 
         symbols {
-            //     + & # ~ *    " [ ]   BACKSPACE
-            //   TAB ^ @ % $    ' ( ) | ENTER
-            //     = ? ! \ /    ` { } < >
-            //----------------------------------
-
             bindings = <
 &kp AMPERSAND  &kp AT_SIGN       &kp HASH          &kp STAR          &kp TILDE        &kp GRAVE          &kp LBKT                    &kp RBKT         &kp PIPE       &trans
 &mtl LALT ESC  &mtl LSHFT EQUAL  &mtl LCTRL CARET  &mtl LGUI DOLLAR  &kp PRCNT        &kp DOUBLE_QUOTES  &mtr RGUI LEFT_PARENTHESIS  &mtr RCTRL RPAR  &mtr RSHFT LT  &kp GT
