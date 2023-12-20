@@ -108,7 +108,7 @@ mtl: mod_tap_left {
                 &kp Q        &kp W         &kp E         &kp R        &kp T         &kp Y   &kp U        &kp I         &kp O         &kp P
                 &mtl LALT A  &mtl LSHFT S  &mtl LCTRL D  &mtl LGUI F  &kp G         &kp H   &mtr RGUI J  &mtr RCTRL K  &mtr RSHFT L  &kp RALT
                 &kp Z        &kp X         &kp C         &kp V        &kp B         &kp N   &kp M        &cma_scolon   &dot_colon    &dash_undrsc
-                &kp SPACE    &kp ESCAPE    &bs_td  &lt 2 ENTER
+                &kp SPACE    &kp ESCAPE    &lt 1 BSPC  &lt 2 ENTER
                 >;
         };
 
