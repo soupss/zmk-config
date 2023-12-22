@@ -93,6 +93,20 @@
             bindings = <&kp GLOBE>;
             key-positions = <20 21>;
         };
+        vol_up {
+            bindings = <&kp K_VOLUME_UP>;
+            key-positions = <9 8>;
+        };
+
+        vol_mute {
+            bindings = <&kp K_MUTE>;
+            key-positions = <18 19>;
+        };
+
+        vol_down {
+            bindings = <&kp K_VOL_DN>;
+            key-positions = <28 29>;
+        };
     };
 
     keymap {
