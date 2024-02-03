@@ -84,17 +84,17 @@
         };
 
         a {
-            bindings = <&none>;
+            bindings = <&kp Å >;
             key-positions = <6 16>;
         };
 
         aa {
-            bindings = <&none>;
+            bindings = <&kp Ä>;
             key-positions = <17 7>;
         };
 
         aaa {
-            bindings = <&none>;
+            bindings = <&kp Ö>;
             key-positions = <8 18>;
         };
     };
