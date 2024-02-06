@@ -83,19 +83,9 @@
             key-positions = <20 21>;
         };
 
-        a {
-            bindings = <&kp Å >;
-            key-positions = <6 16>;
-        };
-
-        aa {
-            bindings = <&kp Ä>;
-            key-positions = <17 7>;
-        };
-
-        aaa {
-            bindings = <&kp Ö>;
-            key-positions = <8 18>;
+        toggle-to-sfv {
+            bindings = <&tog 4>;
+            key-positions = <0 20 9 29>;
         };
     };
 
@@ -136,6 +126,15 @@
 &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans           &kp K_VOL_DN
                         &trans  &trans    &trans    &trans
             >;
+        };
+
+        sfv {
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &kp Q   &trans  &trans    &kp N7  &kp N8  &kp N9  &trans  &trans
+                &trans  &kp Z   &kp X   &kp C   &trans    &kp Y   &kp U   &kp I   &trans  &trans
+                &trans  &trans    &trans  &trans
+                >;
         };
     };
 
