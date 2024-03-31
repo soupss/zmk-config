@@ -103,9 +103,9 @@
 
         numbers {
             bindings = <
-&trans    &trans     &trans     &trans    &trans    &trans  &kp N7        &kp N8         &kp N9         &trans
-&kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &trans    &trans  &mtr RGUI N4  &mtr RCTRL N5  &mtr RSHFT N6  &kp RALT
-&trans    &trans     &trans     &trans    &trans    &kp N0  &kp N1        &kp N2         &kp N3         &trans
+&trans    &kp F7     &kp F8     &kp F9    &trans    &trans  &kp N7        &kp N8         &kp N9         &trans
+&kp LALT  &mtl LSHFT F4  &mtl LCTRL F5  &mtl LGUI F6  &trans    &trans  &mtr RGUI N4  &mtr RCTRL N5  &mtr RSHFT N6  &mtr RALT N0
+&trans    &kp F1     &kp F2     &kp F3    &trans    &trans  &kp N1        &kp N2         &kp N3         &trans
                                 &trans    &trans    &trans  &trans
             >;
         };
