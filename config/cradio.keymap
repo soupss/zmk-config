@@ -141,7 +141,7 @@
         default {
             bindings = <
 &kp Q        &kp W               &kp E         &kp R        &kp T                          &kp Y                     &kp U         &kp I         &kp O               &kp P
-&mtl LALT A  &mtl_shift LSHFT S  &mtl LCTRL D  &mtl LGUI F  &mtl LS(LA(LC(LG(KC_NO)))) G    &mtr LS(LC(LA(LG(KC_NO)))) H  &mtr RGUI J   &mtr RCTRL K  &mtr_shift RSHFT L  &mtr RALT SQT
+&mtl LALT A  &mtl_shift LSHFT S  &mtl LCTRL D  &mtl LGUI F  &mtl LG(LC(LA(LSHIFT))) G    &mtr RG(RC(RA(RSHIFT))) H  &mtr RGUI J   &mtr RCTRL K  &mtr_shift RSHFT L  &mtr RALT SQT
 &kp Z        &kp X               &kp C         &kp V        &kp B                          &kp N                     &kp M         &cma_scolon   &dot_colon          &dash_undrsc
                                                &kp TAB      &lt 2 SPACE                    &lt 1 BSPC                &lt 3 RETURN
             >;
